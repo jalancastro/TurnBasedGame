@@ -17,7 +17,7 @@ public class TurnBasedGame {
 
         System.out.println("Welcome, " + playerName + "! Your character starts with 10 HP.");
 
-        // Game loop
+        // In-game loop
         while (playerHP > 0) {
             System.out.println("Options:");
             if (!inBattle) {
