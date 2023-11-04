@@ -1,4 +1,4 @@
-package com.coding.practicewithclasses;
+package com.coding.turnbasedgame;
 
 import java.util.Random;
 import java.util.Scanner;
