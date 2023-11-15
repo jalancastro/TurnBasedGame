@@ -10,6 +10,8 @@ public class TurnBasedGame {
         int playerHP = 10;  // Initialize playerHP to 10
         int enemyHP = 0;  // Initialize enemyHP to 0
         boolean inBattle = false;
+        int enemyDefeated = 0;
+
 
         // Intro to game
         System.out.print("Enter your name: ");
@@ -34,7 +36,7 @@ public class TurnBasedGame {
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
 
-            if (choice == 0) {
+            if (choice == 0) {  // Exiting game
                 System.out.println("\nThanks for playing, " + playerName + "!");
                 break;
             } else if (choice == 1) {
@@ -57,6 +59,7 @@ public class TurnBasedGame {
                     playerHP += 5;
                     System.out.println("\nYou gained 5 HP. Your HP is now " + playerHP);
                     inBattle = false;
+                    enemyDefeated++;
                 } else {
                     // Enemy attacks back
                     damage = random.nextInt(enemyHP) + 1;
@@ -66,6 +69,7 @@ public class TurnBasedGame {
 
                     if (playerHP <= 0) {
                         System.out.println("\nYou were defeated. Game over!");
+                        System.out.println("(You defeated " + enemyDefeated + " enemies).");
                     } else {
                         System.out.println("\nYour HP is now " + playerHP);
                         System.out.println("The enemy's HP is now " + enemyHP + "\n");
@@ -74,7 +78,7 @@ public class TurnBasedGame {
             } else if (choice == 2) {
                 System.out.println("\nYour current HP is " + playerHP);
             } else if (choice == 3) {
-                System.out.println("You left the battle. -5 HP");
+                System.out.println("\nYou left the battle. -5 HP\n");
                 playerHP -= 5;
             } else {
                 System.out.println("\nInvalid choice. Please select a valid option.");
